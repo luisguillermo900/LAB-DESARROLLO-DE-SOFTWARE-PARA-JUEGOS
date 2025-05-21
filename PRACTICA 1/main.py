@@ -9,6 +9,9 @@ pygame.init()
 # Crear la pantalla
 screen = pygame.display.set_mode((800, 600))
 
+# Background
+background = pygame.image.load('background.jpg')
+
 # Música de fondo
 mixer.music.load('background.wav')
 mixer.music.play(-1)
