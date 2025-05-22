@@ -1,0 +1,14 @@
+# Archivos y carpetas de Visual Studio
+.vs/
+*.user
+*.suo
+
+# Archivos temporales de Unity
+Library/
+Temp/
+Logs/
+Obj/
+Build/
+.idea/
+.vscode/
+UserSettings/
