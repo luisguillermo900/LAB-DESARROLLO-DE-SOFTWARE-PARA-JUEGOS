@@ -9,25 +9,25 @@ pygame.init()
 # Crear la pantalla
 screen = pygame.display.set_mode((800, 600))
 
-# Background
-background = pygame.image.load('background.jpg')
+# Cargar fondo (escalado a pantalla completa)
+background = pygame.transform.scale(pygame.image.load('background.jpg'), (800, 600))
 
 # Música de fondo
-mixer.music.load('background.wav')
+mixer.music.load('background.mp3')
 mixer.music.play(-1)
 
-# Título e ícono
-pygame.display.set_caption("Space Invaders")
-icon = pygame.image.load('ufo.png')
+# Título e ícono (UFO alargado)
+icon = pygame.transform.scale(pygame.image.load('ufo.png'), (100, 40))
 pygame.display.set_icon(icon)
+pygame.display.set_caption("Space Invaders")
 
-# Jugador
-playerImg = pygame.image.load('player.png')
+# Jugador (nave centrada, tamaño 64x64)
+playerImg = pygame.transform.scale(pygame.image.load('player.png'), (64, 64))
 playerX = 370
 playerY = 480
 playerX_change = 0
 
-# Enemigo
+# Enemigos (cuadrados, 40x40)
 enemyImg = []
 enemyX = []
 enemyY = []
@@ -36,19 +36,19 @@ enemyY_change = []
 num_of_enemies = 6
 
 for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('enemy.png'))
+    img = pygame.transform.scale(pygame.image.load('enemy.png'), (40, 40))
+    enemyImg.append(img)
     enemyX.append(random.randint(0, 735))
     enemyY.append(random.randint(50, 150))
     enemyX_change.append(1)
     enemyY_change.append(40)
 
-# Bala
-bulletImg = pygame.image.load('bullet.png')
+# Bala (pequeña, 5x15)
+bulletImg = pygame.transform.scale(pygame.image.load('bullet.png'), (30, 45))
 bulletX = 0
 bulletY = 480
-bulletX_change = 0
 bulletY_change = 10
-bullet_state = "ready"  # "ready" = no visible, "fire" = en pantalla
+bullet_state = "ready"
 
 # Puntaje
 score_value = 0
@@ -76,7 +76,7 @@ def enemy(x, y, i):
 def fire_bullet(x, y):
     global bullet_state
     bullet_state = "fire"
-    screen.blit(bulletImg, (x + 16, y + 10))
+    screen.blit(bulletImg, (x + 30, y))  # +30 para centrar con nave
 
 def isCollision(enemyX, enemyY, bulletX, bulletY):
     distance = math.sqrt(math.pow(enemyX - bulletX, 2) + math.pow(enemyY - bulletY, 2))
@@ -85,8 +85,8 @@ def isCollision(enemyX, enemyY, bulletX, bulletY):
 # Bucle principal
 running = True
 while running:
-    screen.fill((0, 0, 0))  # fondo negro
-    screen.blit(pygame.image.load('background.jpg'), (0, 0))
+    screen.fill((0, 0, 0))
+    screen.blit(background, (0, 0))  # Usar fondo precargado y escalado
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -100,7 +100,7 @@ while running:
                 playerX_change = 1
             if event.key == pygame.K_SPACE:
                 if bullet_state == "ready":
-                    bullet_Sound = mixer.Sound('laser.wav')
+                    bullet_Sound = mixer.Sound('laser.mp3')
                     bullet_Sound.play()
                     bulletX = playerX
                     fire_bullet(bulletX, bulletY)
@@ -110,14 +110,14 @@ while running:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                 playerX_change = 0
 
-    # Movimiento jugador
+    # Movimiento del jugador
     playerX += playerX_change
     if playerX <= 0:
         playerX = 0
     elif playerX >= 736:
         playerX = 736
 
-    # Movimiento enemigo
+    # Movimiento del enemigo
     for i in range(num_of_enemies):
         if enemyY[i] > 440:
             for j in range(num_of_enemies):
@@ -133,10 +133,9 @@ while running:
             enemyX_change[i] = -1
             enemyY[i] += enemyY_change[i]
 
-        # Colisión
         collision = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
         if collision:
-            explosion_Sound = mixer.Sound('explosion.wav')
+            explosion_Sound = mixer.Sound('explosion.mp3')
             explosion_Sound.play()
             bulletY = 480
             bullet_state = "ready"
