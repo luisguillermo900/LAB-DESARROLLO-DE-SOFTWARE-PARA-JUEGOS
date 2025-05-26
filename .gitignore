@@ -1,0 +1,13 @@
+# Ignorar carpetas de Unity generadas automáticamente
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+Packages/packages-lock.json
+
+PRACTICA 1/
+PRACTICA 2/
