@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\Cup.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Target.cs" />
     <Compile Include="Assets\Scripts\Trajectory.cs" />
   </ItemGroup>
   <ItemGroup>
