@@ -1,89 +1,105 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-	#region Singleton class: GameManager
+    #region Singleton class: GameManager
+    public static GameManager Instance;
 
-	public static GameManager Instance;
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+    #endregion
 
-	void Awake ()
-	{
-		if (Instance == null) {
-			Instance = this;
-		}
-	}
+    Camera cam;
 
-	#endregion
+    public Ball ball;
+    public Trajectory trajectory;
+    [SerializeField] float pushForce = 4f;
 
-	Camera cam;
+    bool isDragging = false;
 
-	public Ball ball;
-	public Trajectory trajectory;
-	[SerializeField] float pushForce = 4f;
+    Vector2 startPoint;
+    Vector2 endPoint;
+    Vector2 direction;
+    Vector2 force;
+    float distance;
 
-	bool isDragging = false;
+    public int score = 0;
+    public TextMeshProUGUI scoreText;
 
-	Vector2 startPoint;
-	Vector2 endPoint;
-	Vector2 direction;
-	Vector2 force;
-	float distance;
+    //---------------------------------------
+    void Start()
+    {
+        cam = Camera.main;
+        ball.DesactivateRb();
+        UpdateScoreText();
+    }
 
-	//---------------------------------------
-	void Start ()
-	{
-		cam = Camera.main;
-		ball.DesactivateRb ();
-	}
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            isDragging = true;
+            OnDragStart();
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            isDragging = false;
+            OnDragEnd();
+        }
 
-	void Update ()
-	{
-		if (Input.GetMouseButtonDown (0)) {
-			isDragging = true;
-			OnDragStart ();
-		}
-		if (Input.GetMouseButtonUp (0)) {
-			isDragging = false;
-			OnDragEnd ();
-		}
+        if (isDragging)
+        {
+            OnDrag();
+        }
+    }
 
-		if (isDragging) {
-			OnDrag ();
-		}
-	}
+    //-Drag--------------------------------------
+    void OnDragStart()
+    {
+        ball.DesactivateRb();
+        startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
 
-	//-Drag--------------------------------------
-	void OnDragStart ()
-	{
-		ball.DesactivateRb ();
-		startPoint = cam.ScreenToWorldPoint (Input.mousePosition);
+        trajectory.Show();
+    }
 
-		trajectory.Show ();
-	}
+    void OnDrag()
+    {
+        endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+        distance = Vector2.Distance(startPoint, endPoint);
+        direction = (startPoint - endPoint).normalized;
+        force = direction * distance * pushForce;
 
-	void OnDrag ()
-	{
-		endPoint = cam.ScreenToWorldPoint (Input.mousePosition);
-		distance = Vector2.Distance (startPoint, endPoint);
-		direction = (startPoint - endPoint).normalized;
-		force = direction * distance * pushForce;
+        Debug.DrawLine(startPoint, endPoint);
 
-		//just for debug
-		Debug.DrawLine (startPoint, endPoint);
+        trajectory.UpdateDots(ball.pos, force);
+    }
 
+    void OnDragEnd()
+    {
+        ball.ActivateRb();
+        ball.Push(force);
+        trajectory.Hide();
+    }
 
-		trajectory.UpdateDots (ball.pos, force);
-	}
+    //---------------------------------------
+    public void AddPoint()
+    {
+        score++;
+        Debug.Log("Puntaje: " + score);
+        UpdateScoreText();
+    }
 
-	void OnDragEnd ()
-	{
-		//push the ball
-		ball.ActivateRb ();
-
-		ball.Push (force);
-
-		trajectory.Hide ();
-	}
-
+    void UpdateScoreText()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = "Puntaje: " + score;
+        }
+    }
 }

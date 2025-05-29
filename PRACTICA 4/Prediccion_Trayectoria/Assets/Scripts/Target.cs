@@ -7,7 +7,8 @@ public class Target : MonoBehaviour
         if (collision.gameObject.CompareTag("Ball"))
         {
             Debug.Log("¡Has acertado al objetivo!");
-            Destroy(gameObject); 
+            GameManager.Instance.AddPoint();
+            Destroy(gameObject);
         }
     }
 }

@@ -1,12 +1,12 @@
-ï»¿using UnityEngine;
+using UnityEngine;
 
-public class Cup : MonoBehaviour
+public class CupSensor : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Ball"))
         {
-            Debug.Log("Â¡La bola entrÃ³ en la canasta!");
+            Debug.Log("¡La bola entró en la canasta!");
             GameManager.Instance.AddPoint();
         }
     }
