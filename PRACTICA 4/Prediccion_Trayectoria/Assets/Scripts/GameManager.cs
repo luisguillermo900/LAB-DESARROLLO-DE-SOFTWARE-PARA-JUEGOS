@@ -3,7 +3,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    #region Singleton class: GameManager
+    #region Singleton
     public static GameManager Instance;
 
     void Awake()
@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public TextMeshProUGUI scoreText;
 
-    //---------------------------------------
     void Start()
     {
         cam = Camera.main;
@@ -42,11 +41,13 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // Control de arrastre
         if (Input.GetMouseButtonDown(0))
         {
             isDragging = true;
             OnDragStart();
         }
+
         if (Input.GetMouseButtonUp(0))
         {
             isDragging = false;
@@ -57,14 +58,18 @@ public class GameManager : MonoBehaviour
         {
             OnDrag();
         }
+
+        // Reinicio de bola al presionar ESC
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ResetBall();
+        }
     }
 
-    //-Drag--------------------------------------
     void OnDragStart()
     {
         ball.DesactivateRb();
         startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-
         trajectory.Show();
     }
 
@@ -76,7 +81,6 @@ public class GameManager : MonoBehaviour
         force = direction * distance * pushForce;
 
         Debug.DrawLine(startPoint, endPoint);
-
         trajectory.UpdateDots(ball.pos, force);
     }
 
@@ -87,7 +91,7 @@ public class GameManager : MonoBehaviour
         trajectory.Hide();
     }
 
-    //---------------------------------------
+    // Método público para sumar puntos
     public void AddPoint()
     {
         score++;
@@ -95,11 +99,18 @@ public class GameManager : MonoBehaviour
         UpdateScoreText();
     }
 
+    // Actualiza el texto de puntaje en la UI
     void UpdateScoreText()
     {
         if (scoreText != null)
         {
             scoreText.text = "Puntaje: " + score;
         }
+    }
+
+    // Reinicia la bola a su posición inicial
+    public void ResetBall()
+    {
+        ball.ResetPosition();
     }
 }

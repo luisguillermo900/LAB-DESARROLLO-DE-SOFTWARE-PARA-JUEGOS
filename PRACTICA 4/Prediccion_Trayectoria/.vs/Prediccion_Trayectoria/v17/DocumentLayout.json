@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\QUINTO A\u00D1O-SEGUNDO\\DESARROLLO DE SOFTWARE PARA JUEGOS\\LAB\\PRACTICA 4\\Prediccion_Trayectoria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F5E46682-43FC-26E6-9047-FAA6BE5A99FF}|Assembly-CSharp.csproj|d:\\quinto a\u00F1o-segundo\\desarrollo de software para juegos\\lab\\practica 4\\prediccion_trayectoria\\assets\\scripts\\cupsensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5E46682-43FC-26E6-9047-FAA6BE5A99FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cupsensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5E46682-43FC-26E6-9047-FAA6BE5A99FF}|Assembly-CSharp.csproj|d:\\quinto a\u00F1o-segundo\\desarrollo de software para juegos\\lab\\practica 4\\prediccion_trayectoria\\assets\\scripts\\cup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5E46682-43FC-26E6-9047-FAA6BE5A99FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F5E46682-43FC-26E6-9047-FAA6BE5A99FF}|Assembly-CSharp.csproj|d:\\quinto a\u00F1o-segundo\\desarrollo de software para juegos\\lab\\practica 4\\prediccion_trayectoria\\assets\\scripts\\ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5E46682-43FC-26E6-9047-FAA6BE5A99FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F5E46682-43FC-26E6-9047-FAA6BE5A99FF}|Assembly-CSharp.csproj|D:\\QUINTO A\u00D1O-SEGUNDO\\DESARROLLO DE SOFTWARE PARA JUEGOS\\LAB\\PRACTICA 4\\Prediccion_Trayectoria\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5E46682-43FC-26E6-9047-FAA6BE5A99FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5E46682-43FC-26E6-9047-FAA6BE5A99FF}|Assembly-CSharp.csproj|d:\\quinto a\u00F1o-segundo\\desarrollo de software para juegos\\lab\\practica 4\\prediccion_trayectoria\\assets\\scripts\\cupsensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5E46682-43FC-26E6-9047-FAA6BE5A99FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cupsensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5E46682-43FC-26E6-9047-FAA6BE5A99FF}|Assembly-CSharp.csproj|D:\\QUINTO A\u00D1O-SEGUNDO\\DESARROLLO DE SOFTWARE PARA JUEGOS\\LAB\\PRACTICA 4\\Prediccion_Trayectoria\\assets\\scripts\\cup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5E46682-43FC-26E6-9047-FAA6BE5A99FF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F5E46682-43FC-26E6-9047-FAA6BE5A99FF}|Assembly-CSharp.csproj|D:\\QUINTO A\u00D1O-SEGUNDO\\DESARROLLO DE SOFTWARE PARA JUEGOS\\LAB\\PRACTICA 4\\Prediccion_Trayectoria\\assets\\scripts\\target.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,6 +35,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Ball.cs",
+              "DocumentMoniker": "D:\\QUINTO A\u00D1O-SEGUNDO\\DESARROLLO DE SOFTWARE PARA JUEGOS\\LAB\\PRACTICA 4\\Prediccion_Trayectoria\\Assets\\Scripts\\Ball.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Ball.cs",
+              "ToolTip": "D:\\QUINTO A\u00D1O-SEGUNDO\\DESARROLLO DE SOFTWARE PARA JUEGOS\\LAB\\PRACTICA 4\\Prediccion_Trayectoria\\Assets\\Scripts\\Ball.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Ball.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T09:48:51.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CupSensor.cs",
               "DocumentMoniker": "D:\\QUINTO A\u00D1O-SEGUNDO\\DESARROLLO DE SOFTWARE PARA JUEGOS\\LAB\\PRACTICA 4\\Prediccion_Trayectoria\\Assets\\Scripts\\CupSensor.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CupSensor.cs",
@@ -43,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Cup.cs",
               "DocumentMoniker": "D:\\QUINTO A\u00D1O-SEGUNDO\\DESARROLLO DE SOFTWARE PARA JUEGOS\\LAB\\PRACTICA 4\\Prediccion_Trayectoria\\Assets\\Scripts\\Cup.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Cup.cs",
@@ -51,24 +68,24 @@
               "RelativeToolTip": "Assets\\Scripts\\Cup.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T09:28:17.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T09:28:17.377Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\QUINTO A\u00D1O-SEGUNDO\\DESARROLLO DE SOFTWARE PARA JUEGOS\\LAB\\PRACTICA 4\\Prediccion_Trayectoria\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "D:\\QUINTO A\u00D1O-SEGUNDO\\DESARROLLO DE SOFTWARE PARA JUEGOS\\LAB\\PRACTICA 4\\Prediccion_Trayectoria\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGkAAAAAAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAQwHQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T09:07:37.756Z"
+              "WhenOpened": "2025-05-29T09:07:37.756Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Target.cs",
               "DocumentMoniker": "D:\\QUINTO A\u00D1O-SEGUNDO\\DESARROLLO DE SOFTWARE PARA JUEGOS\\LAB\\PRACTICA 4\\Prediccion_Trayectoria\\Assets\\Scripts\\Target.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Target.cs",
